@@ -9,9 +9,9 @@ let mainPage = fs.readFileSync("frogwares_test/MainPageInfo.json", "utf8");
 let generalQuest = fs.readFileSync("frogwares_test/GeneralQuestsInfo.json", "utf8");
 let finishedQuest = fs.readFileSync("frogwares_test/FinishedQuestsLeafs.json", "utf8");
 
-console.log(mainPage);
-console.log(generalQuest);
-console.log(finishedQuest);
+//console.log(mainPage);
+//console.log(generalQuest);
+//console.log(finishedQuest);
 
 //GET data from MainPageInfo.json
 app.get('/', function(req, res){
