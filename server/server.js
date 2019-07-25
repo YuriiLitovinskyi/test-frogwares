@@ -5,9 +5,9 @@ app.use(cors());
 const fs = require("fs");
 
 
-let mainPage = JSON.parse(fs.readFileSync("frogwares_test/MainPageInfo.json", "utf8"));
-let generalQuest = JSON.parse(fs.readFileSync("frogwares_test/GeneralQuestsInfo.json", "utf8"));
-let finishedQuest = JSON.parse(fs.readFileSync("frogwares_test/FinishedQuestsLeafs.json", "utf8"));
+let mainPage = fs.readFileSync("frogwares_test/MainPageInfo.json", "utf8");
+let generalQuest = fs.readFileSync("frogwares_test/GeneralQuestsInfo.json", "utf8");
+let finishedQuest = fs.readFileSync("frogwares_test/FinishedQuestsLeafs.json", "utf8");
 
 console.log(mainPage);
 console.log(generalQuest);
