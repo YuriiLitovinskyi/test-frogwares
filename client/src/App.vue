@@ -1,14 +1,20 @@
 <template>
   <div id="app">
     <h1>Test Task</h1> 
-    <MainPage v-bind:mainPageInfo="mainPageInfo" v-on:main-handle="handler" />      
+    <MainPage v-bind:mainPageInfo="mainPageInfo" v-on:main-handle="handler(loadGeneralQuestInfo, loadFinishedQuestleafs)" />      
 	      
     <ul v-bind:key="data.id" v-for="data in generalQuestInfo">
-	  <li> {{data.name}} </li>
+	  <li>Build ID: {{data.globalId}} Platform: {{data.platform}} Quest Name: {{data.alias}}  Status: {{data.pathway.status}} Path Name: {{data.pathway.name}}</li>
 	</ul>
     <ul v-bind:key="data.id" v-for="data in finishedQuestleafs">
 	  <li> {{data.name}} </li>
-	</ul>    
+	</ul>
+    
+	<ul>	
+	<li v-on:click=""><i class="fas fa-check"></i></li>
+	<li><i class="fas fa-times"></i></li>
+	<li><i class="fas fa-minus"></i></li>
+	</ul>
 	
   </div>
 </template>
@@ -45,8 +51,8 @@ methods: {
         .catch(err => console.log(err));
 	},
 	handler: function(f1, f2) {
-		this.loadGeneralQuestInfo();
-		this.loadFinishedQuestleafs();
+		f1();
+		f2();
 	}
  
 },
