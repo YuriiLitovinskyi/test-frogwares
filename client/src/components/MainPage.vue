@@ -8,7 +8,7 @@
 	    		<td v-bind:key="data.id" v-for="data in mainPageInfo">		    
 	                <i v-on:click="$emit('main-handle', data.status)" v-bind:class="data.status == 'SUCCESS' ? 'fas fa-check': 
 	    				data.status == 'CRASH' ? 'fas fa-times' : 
-	    							  'fas fa-minus'"></i> 			
+	    							  'fas fa-minus'"></i>			
 	    		</td>
 	  	    </tr>
 	    </table>

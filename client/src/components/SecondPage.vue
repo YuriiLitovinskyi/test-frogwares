@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>Detailed Quest Description</h2>
+		<h2>Detailed Quest Statistics</h2>
 		<table align="center">
 		    <tr>
 		      <th>Build ID</th>
