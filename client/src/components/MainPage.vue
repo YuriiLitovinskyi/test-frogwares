@@ -2,11 +2,11 @@
 	<div>
 		<table align="center">
 		    <tr>
-	    	  <th v-bind:key="data.id" v-for="data in mainPageInfo">{{data.alias}}</th>
+	    	  <th v-bind:key="data.id" v-for="data in mainPageInfo">{{ data.alias }}</th>
 	  	    </tr>
 	  	    <tr>	    
 	    		<td v-bind:key="data.id" v-for="data in mainPageInfo">		    
-	                <i v-on:click="$emit('main-handle')" v-bind:class="data.status == 'SUCCESS' ? 'fas fa-check': 
+	                <i v-on:click="$emit('main-handle', data.status)" v-bind:class="data.status == 'SUCCESS' ? 'fas fa-check': 
 	    				data.status == 'CRASH' ? 'fas fa-times' : 
 	    							  'fas fa-minus'"></i> 			
 	    		</td>
@@ -39,18 +39,6 @@ th, td {
 .fas {	
 	font-size: 2.2em;
 	padding: 20px;
-}
-
-.fa-check {
-	color: #008900;
-}
-
-.fa-times {
-	color: #FF0000; 
-}
-
-.fa-minus {
-	color: #000000;
 }
 
 i:hover {	
