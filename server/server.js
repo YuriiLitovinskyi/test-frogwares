@@ -44,8 +44,6 @@ app.get('/finished', function(req, res){
 });
 
 
-
-
 const port = 3004;
 app.listen(port, function(){
 	console.log("Server started on port "+ port +"...");

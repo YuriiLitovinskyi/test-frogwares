@@ -1,24 +1,22 @@
+
 <template>
   <div id="app">
     <h1>Quest Statistics</h1> 
     <MainPage v-bind:mainPageInfo="mainPageInfo" v-on:main-handle="handler(loadGeneralQuestInfo, loadFinishedQuestleafs, $event)" />    
-     <SecondPage v-bind:generalQuestInfo="generalQuestInfo" :isActive="isActive" :getIconClass="getIconClass"/>
+     <SecondPage v-bind:generalQuestInfo="generalQuestInfo" :isActive="isActive" :getIconClass="getIconClass"/>     
   </div>
 </template>
 
 <script>
-
 import MainPage from '../components/MainPage'
-//import SecondPage from '../components/SecondPage'
-import SecondPage from './About'
-import axios from 'axios';
+import SecondPage from '../components/SecondPage'
+import axios from 'axios'
 
 export default {
   name: 'Home',
   components: {
     MainPage,
-    SecondPage
-      
+    SecondPage        
   },
 
   data(){
@@ -34,13 +32,13 @@ methods: {
 	loadGeneralQuestInfo() {
 		axios.get("http://localhost:3004/general")
 		.then(res => this.generalQuestInfo = res.data)
-        .catch(err => console.log(err));		
+    .catch(err => console.log(err));		
 	},
 	
 	loadFinishedQuestleafs() {
 		axios.get("http://localhost:3004/finished")
 		.then(res => this.finishedQuestleafs = res.data)
-        .catch(err => console.log(err));
+    .catch(err => console.log(err));
 	},
 
 	handler: function(f1, f2, event) {
@@ -52,7 +50,7 @@ methods: {
       this.isActive = 2;
     } else {
       this.isActive = 3;
-    }
+    }    
 	},
   
   getIconClass(id, leaf) {
@@ -64,12 +62,9 @@ methods: {
 created(){ 
     axios.get("http://localhost:3004/")
     .then(res => this.mainPageInfo = res.data)
-    .catch(err => console.log(err));   
+    .catch(err => console.log(err));     
   } 
 }
 
 </script>
 
-<style>
-
-</style>

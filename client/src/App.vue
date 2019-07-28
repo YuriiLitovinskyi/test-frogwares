@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+     <!-- <router-link to="/">Home</router-link> |      
+      <router-link to="/second">second</router-link> |      
+      <router-link to="/no-info">no-info</router-link> -->
+    </div>    
+      <router-view/>    
   </div>
 </template>
 
@@ -31,6 +32,12 @@ body {
 
 .fa-minus {
   color: #000000;
+}
+
+.fa-window-close {
+  color: grey;
+  font-size: 2.2em;
+  padding: 5px;
 }
 
 table, th, td {
