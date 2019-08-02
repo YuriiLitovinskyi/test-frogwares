@@ -6,7 +6,7 @@
 	  	    </tr>
 	  	    <tr>	    
 	    		<td v-bind:key="data.id" v-for="data in mainPageInfo">		    
-	                <router-link :to="data.status == 'SUCCESS' || data.status == 'CRASH' ? '/' : '/no-info'"><i v-on:click="$emit('main-handle', data.status)" v-bind:class="data.status == 'SUCCESS' ? 'fas fa-check': data.status == 'CRASH' ? 'fas fa-times' : 'fas fa-minus'"></i></router-link>		
+	                <router-link :to="data.status == 'SUCCESS' || data.status == 'CRASH' ? '/second' : '/no-info'"><i v-on:click="$emit('main-handle', data.status)" v-bind:class="data.status == 'SUCCESS' ? 'fas fa-check': data.status == 'CRASH' ? 'fas fa-times' : 'fas fa-minus'"></i></router-link>		
 	    		</td>
 	  	    </tr>
 	    </table>
@@ -15,11 +15,12 @@
 
 <script>
 export default {
-	name: "MainPage",
-	props: ["mainPageInfo"],
-	methods: {
-
-	}
+	name: "MainPage",	
+	computed: {
+		mainPageInfo() {
+			return this.$store.state.mainPageInfo;
+		}
+	},
 }
 </script>
 

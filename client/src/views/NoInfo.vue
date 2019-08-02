@@ -6,17 +6,10 @@
   </div>
 </template>
 
-<script>
-
-  export default {
-    name: 'NoInfo'  
-  }
-
-</script>
-
 <style scoped>
+
 .far {  
-  font-size: 12em;
+  font-size: 18em;  
   padding: 20px; 
 }
 

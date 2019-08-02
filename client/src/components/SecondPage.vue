@@ -16,12 +16,7 @@
 		      <td>{{ data.globalId }}</td>
 		      <td>{{ data.platform }}</td>
 		      <td>{{ data.alias }}</td>
-		    </tr>
-		    <tr v-else-if="isActive === 3">
-		      <td>No Info</td>
-		      <td>No Info</td>
-		      <td>No Info</td>
-		    </tr>    
+		    </tr>		      
 	  </table>
 	  <h3>Pathways</h3>
 	  <table align="center">
@@ -47,12 +42,7 @@
 	          <i :class="getIconClass(data.id, leaf)"></i> {{ leaf }}
 	        </li>
 	      </ul>     
-	    </tr>
-	    <tr v-else-if="isActive === 3">
-	      <td>No Info</td>
-	      <td>No Info</td>      
-	      <i class="far fa-window-close"></i>	       
-	    </tr> 
+	    </tr>	   
 	  </table>
    </div>
 </template>
@@ -60,13 +50,28 @@
 <script>
 
 export default {
-	name: "SecondPage",
-	props: ["generalQuestInfo", "isActive", "getIconClass"]		
-	
+	name: "SecondPage",	
+    computed: {
+		mainPageInfo() {
+			return this.$store.state.mainPageInfo;
+		},
+		generalQuestInfo() {
+			return this.$store.state.generalQuestInfo;
+		},
+		isActive() {
+			return this.$store.state.isActive
+		}
+	},
+	methods: {
+		getIconClass(id, leaf) {
+            return this.$store.state.finishedQuestleafs.find(item => item.questId === id && item.name === leaf) ? "fa fa-check" : "fa fa-times";
+    } 
+	}
 }
 </script>
 
 <style scoped>
+
 li {
   list-style: none;
   display: inline;
