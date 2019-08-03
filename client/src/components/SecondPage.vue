@@ -48,22 +48,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
 	name: "SecondPage",	
-    computed: {
-		mainPageInfo() {
-			return this.$store.state.mainPageInfo;
-		},
-		generalQuestInfo() {
-			return this.$store.state.generalQuestInfo;
-		},
-		isActive() {
-			return this.$store.state.isActive
-		}
-	},
+	computed: mapGetters({
+		mainPageInfo: 'getMainPageInfo',
+		generalQuestInfo: 'getGeneralQuestInfo',
+		isActive: 'getIsActiveValue'
+	}),
 	methods: {
 		getIconClass(id, leaf) {
-            return this.$store.state.finishedQuestleafs.find(item => item.questId === id && item.name === leaf) ? "fa fa-check" : "fa fa-times";
+            return this.$store.getters.getFinishedQuestLeafs.find(item => item.questId === id && item.name === leaf) ? "fa fa-check" : "fa fa-times";
         } 
 	}
 }

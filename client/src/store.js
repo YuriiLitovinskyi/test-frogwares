@@ -11,6 +11,20 @@ export const store = new Vuex.Store({
 		finishedQuestleafs: [],
 		isActive: 0    //this value is changing according to icon that was clicked in table from MainTable.vue
 	},
+	getters: {
+		getMainPageInfo(state) {
+			return state.mainPageInfo;
+		},
+		getGeneralQuestInfo(state) {
+			return state.generalQuestInfo;
+		},
+		getFinishedQuestLeafs(state) {
+			return state.finishedQuestleafs;
+		},
+		getIsActiveValue(state) {
+			return state.isActive;
+		}
+	},
 	mutations: {
 		SetMainPageInfo(state, mainPageInfo) {
 			state.mainPageInfo = mainPageInfo;
@@ -20,6 +34,9 @@ export const store = new Vuex.Store({
 		},
 		SetFinishedQuestleafs(state, finishedQuestleafs) {
 			state.finishedQuestleafs = finishedQuestleafs;
+		},
+		SetIsActiveValue(state, isActive) {
+			state.isActive = isActive;
 		}
 	},
 	actions: {

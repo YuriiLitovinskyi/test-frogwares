@@ -18,7 +18,7 @@ export default {
 	name: "MainPage",	
 	computed: {
 		mainPageInfo() {
-			return this.$store.state.mainPageInfo;
+			return this.$store.getters.getMainPageInfo;
 		}
 	},
 	methods: {
