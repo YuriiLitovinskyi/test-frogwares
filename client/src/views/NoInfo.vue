@@ -6,11 +6,12 @@
   </div>
 </template>
 
+
 <style scoped>
 
 .far {  
-  font-size: 18em;  
-  padding: 20px; 
+  font-size: 20em;  
+  padding: 20px;  
 }
 
 </style>

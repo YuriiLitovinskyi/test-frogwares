@@ -6,7 +6,7 @@
 	  	    </tr>
 	  	    <tr>	    
 	    		<td v-bind:key="data.id" v-for="data in mainPageInfo">		    
-	                <router-link :to="data.status == 'SUCCESS' || data.status == 'CRASH' ? '/second' : '/no-info'"><i v-on:click="$emit('main-handle', data.status)" v-bind:class="data.status == 'SUCCESS' ? 'fas fa-check': data.status == 'CRASH' ? 'fas fa-times' : 'fas fa-minus'"></i></router-link>		
+	                <router-link :to="data.status == 'SUCCESS' || data.status == 'CRASH' ? '/second' : '/no-info'"><i v-on:click="$emit('main-handle', data.status)" v-bind:class="getMainIconClass(data.status)"></i></router-link>		
 	    		</td>
 	  	    </tr>
 	    </table>
@@ -19,6 +19,20 @@ export default {
 	computed: {
 		mainPageInfo() {
 			return this.$store.state.mainPageInfo;
+		}
+	},
+	methods: {
+		getMainIconClass(event) {
+			switch(event) {
+				case 'SUCCESS':
+				  return 'fas fa-check';
+				  break;
+				case 'CRASH':
+				  return 'fas fa-times';
+				  break;
+				default:
+				  return 'fas fa-minus';
+			}	
 		}
 	},
 }

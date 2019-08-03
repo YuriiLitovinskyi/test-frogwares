@@ -7,21 +7,21 @@ import SecondPage from './components/SecondPage.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/no-info',
-      name: 'no-info',
-      component: NoInfo
-    },
-    {
-      path: '/second',
-      name: 'second',    
-      component: SecondPage
-    }
-  ]
+    routes: [
+        {
+          path: '/',
+          name: 'home',
+          component: Home
+        },
+        {
+          path: '/no-info',
+          name: 'no-info',
+          component: NoInfo
+        },
+        {
+          path: '/second',
+          name: 'second',    
+          component: SecondPage
+        }
+    ]
 })

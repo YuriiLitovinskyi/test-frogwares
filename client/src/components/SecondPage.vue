@@ -48,7 +48,6 @@
 </template>
 
 <script>
-
 export default {
 	name: "SecondPage",	
     computed: {
@@ -65,7 +64,7 @@ export default {
 	methods: {
 		getIconClass(id, leaf) {
             return this.$store.state.finishedQuestleafs.find(item => item.questId === id && item.name === leaf) ? "fa fa-check" : "fa fa-times";
-    } 
+        } 
 	}
 }
 </script>
@@ -79,6 +78,10 @@ li {
 
 table {
 	width: 1200px;
+}
+
+h3 {
+	padding-top: 30px;
 }
 	
 </style>

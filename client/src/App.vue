@@ -1,18 +1,16 @@
 <template>
-  <div id="app">
-    <div id="nav">
-     <!-- <router-link to="/">Home</router-link> |      
-      <router-link to="/second">second</router-link> |      
-      <router-link to="/no-info">no-info</router-link> -->
-    </div>    
+  <div id="app">       
       <router-view/>    
   </div>
 </template>
 
+
 <style>
+
 body {
   background-color: #f2f2f2;
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

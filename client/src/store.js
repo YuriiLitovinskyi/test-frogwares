@@ -5,6 +5,12 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
+	state: {
+		mainPageInfo: [],
+        generalQuestInfo: [], 
+		finishedQuestleafs: [],
+		isActive: 0    //this value is changing according to icon that was clicked in table from MainTable.vue
+	},
 	mutations: {
 		SetMainPageInfo(state, mainPageInfo) {
 			state.mainPageInfo = mainPageInfo;
@@ -50,11 +56,5 @@ export const store = new Vuex.Store({
 				console.log(error.statusText);
 			})
 		}
-	},
-	state: {
-		mainPageInfo: [],
-        generalQuestInfo: [], 
-		finishedQuestleafs: []
-	},
-	isActive: 0    ////this value is changing according to icon that was clicked in table from MainTable.vue
+	},		
 });
