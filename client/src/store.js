@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios'
+import { BASE_URL } from './main';
 
 Vue.use(Vuex)
 
@@ -42,7 +43,7 @@ export const store = new Vuex.Store({
 	actions: {
 		FetchMainPageInfo({ commit }) {
 			axios
-			.get("http://localhost:3004/")
+			.get(`${BASE_URL}`)
 			.then((response) => {
 				commit("SetMainPageInfo", response.data);
 				//console.log(response.data);
@@ -53,7 +54,7 @@ export const store = new Vuex.Store({
 		},
 		FetchGeneralQuestInfo({ commit }) {
 			axios
-			.get("http://localhost:3004/general")
+			.get(`${BASE_URL}/general`)
 			.then((response) => {
 				commit("SetGeneralQuestinfo", response.data);
 				//console.log(response.data);
@@ -64,7 +65,7 @@ export const store = new Vuex.Store({
 		},
 		FetchFinishedQuestleafs({ commit }) {
 			axios
-			.get("http://localhost:3004/finished")
+			.get(`${BASE_URL}/finished`)
 			.then((response) => {
 				commit("SetFinishedQuestleafs", response.data);
 				//console.log(response.data);

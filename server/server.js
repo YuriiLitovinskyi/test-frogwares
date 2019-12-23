@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-app.use(cors());
 const fs = require("fs");
+
+//Production
+const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080' : 'https://frogwares-vue-client.netlify.com';
+app.use(cors({ origin }));
 
 
 let mainPage = fs.readFileSync("frogwares_test/MainPageInfo.json", "utf8");
@@ -44,7 +47,7 @@ app.get('/finished', function(req, res){
 });
 
 
-const port = 3004;
+const port = process.env.PORT || 3004;
 app.listen(port, function(){
 	console.log("Server started on port "+ port +"...");
 });
