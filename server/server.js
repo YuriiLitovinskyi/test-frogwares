@@ -4,7 +4,7 @@ const cors = require("cors");
 const fs = require("fs");
 
 //Production
-const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080' : 'https://frogwares-vue-client.netlify.com';
+const origin = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080' : 'https://frogwares-vue-client.netlify.app';
 app.use(cors({ origin }));
 
 
